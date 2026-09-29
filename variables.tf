@@ -85,5 +85,11 @@ variable "argocd_ingress_class" {
 variable "argocd_ingress_tls" {
   type        = string
   default     = "false"
-  description = "Enable TLS on ingress ArgoCD"
+  description = "Enable TLS with generate secrets"
+}
+
+variable "argocd_ingress_extra_secret" {
+  type        = string
+  default     = ""
+  description = "Enable tls with external secret"
 }

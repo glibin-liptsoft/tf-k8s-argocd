@@ -33,3 +33,9 @@ server:
     pathType: Prefix
     extraPaths: []
     tls: ${argocd_ingress_tls}
+%{~ if length(argocd_ingress_extra_secret) > 0 }
+    extraTls:
+      - hosts:
+        - "${argocd_domain}"
+        secretName: "${argocd_ingress_extra_secret}"
+%{~ endif }
