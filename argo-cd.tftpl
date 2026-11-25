@@ -1,7 +1,9 @@
 global:
   domain: ${argocd_domain}
+  %{~ if argocd_tag != "" ~}
   image:
     tag: "${argocd_tag}"
+  %{~ endif ~}
   logging:
       format: json
       level: info

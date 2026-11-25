@@ -22,7 +22,7 @@ variable "argocd_domain" {
 
 variable "argocd_tag" {
   type        = string
-  default     = "v3.3.0"
+  default     = ""
   description = "tag image argocd server"
 }
 
